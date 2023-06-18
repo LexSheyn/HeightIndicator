@@ -1,5 +1,6 @@
 
-#include "heightindicatorwidget.h"
+#include "udpserver.h"
+#include "udpclient.h"
 
 #include <QApplication>
 
@@ -7,9 +8,11 @@ int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
-    HeightIndicatorWidget heightIndicatorWidget;
+    UdpServer server;
+    UdpClient client;
 
-    heightIndicatorWidget.show();
+    server.show();
+    client.show();
 
     return application.exec();
 }

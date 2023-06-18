@@ -15,9 +15,15 @@ public:
     HeightIndicatorWidget(QWidget *parent = nullptr);
     ~HeightIndicatorWidget();
 
+public:
+    void setHeight(qint32 height);
+    qint32 getHeight() const;
+
 protected:
     void paintEvent(QPaintEvent* event) override;
 
+
+private:
     qint32 m_height = 0;
 
     const qint32 m_defaultWidth;

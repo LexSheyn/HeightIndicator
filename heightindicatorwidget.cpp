@@ -29,8 +29,6 @@ HeightIndicatorWidget::HeightIndicatorWidget(QWidget *parent)
     //timer->start(10);
     timer->start(1);
 
-    setWindowTitle(tr("Height indicator"));
-
     resize(m_defaultWidth, m_defaultHeight);
 
     const qint32 halfDefaultHeight = m_defaultHeight / 2;
@@ -71,12 +69,18 @@ HeightIndicatorWidget::~HeightIndicatorWidget()
 {
 }
 
+void HeightIndicatorWidget::setHeight(qint32 height)
+{
+    m_height = height;
+}
+
+qint32 HeightIndicatorWidget::getHeight() const
+{
+    return m_height;
+}
+
 void HeightIndicatorWidget::paintEvent(QPaintEvent *event)
 {
-    // TEST:
-    m_height++;
-    //
-
     constexpr qint32 hundredCount = 10;
     constexpr qint32 twentyCount = hundredCount * 5;
 

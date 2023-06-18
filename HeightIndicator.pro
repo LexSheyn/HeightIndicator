@@ -1,8 +1,9 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 CONFIG += c++17
+CONFIG += static
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -11,11 +12,16 @@ CONFIG += c++17
 SOURCES += \
     heightindicatorwidget.cpp \
     main.cpp \
-    ratio.cpp
+    ratio.cpp \
+    udpclient.cpp \
+    udpserver.cpp
 
 HEADERS += \
+    data.h \
     heightindicatorwidget.h \
-    ratio.h
+    ratio.h \
+    udpclient.h \
+    udpserver.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
